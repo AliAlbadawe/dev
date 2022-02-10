@@ -1,7 +1,18 @@
+/* General Rules S */
+
 :root {
   --main-color: rgb(202, 11, 123);
-  --second-color: rgb(68, 68, 68);
+  --main-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px rgb(255, 0, 149), 0 0 82px rgb(255, 0, 149),
+    0 0 92px rgb(255, 0, 149), 0 0 102px rgb(255, 0, 149),
+    0 0 151px rgb(255, 0, 149);
+  --second-color: rgb(248, 247, 247);
   --third-color: rgb(253, 228, 0);
+  --bck-color: rgba(5, 5, 5, 0.123);
+  --bck-color-main: rgba(8, 7, 7, 0.25);
+  --main-font-size: 25px;
+  --second-font-size: 17.5px;
+  --third-font-size: 15px;
 }
 * {
   box-sizing: border-box;
@@ -14,4 +25,525 @@ html {
 body {
   font-family: "Open Sans", sans-serif;
   font-family: "Sora", sans-serif;
+  background-color: var(--bck-color-main);
 }
+
+/* Grid Layout Start */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(9, minmax(200px, 100%), 1fr);
+  grid-auto-columns: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "main-nav main-nav main-nav"
+    "main-container main-container main-container"
+    "short-bio-section short-bio-section short-bio-section"
+    "skills skills skills"
+    "resume resume resume"
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . .";
+}
+
+.main-container {
+  grid-area: main-container;
+}
+
+.short-bio-section {
+  grid-area: short-bio-section;
+}
+
+.main-nav {
+  grid-area: main-nav;
+}
+
+.skills {
+  grid-area: skills;
+}
+
+.resume {
+  grid-area: resume;
+}
+/* Grid Layout End */
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--second-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+/* General Rules E */
+
+/* Header Start */
+.container {
+  background-image: url(/website/imgs/abandon-5235255_1920.jpg);
+  background-size: cover;
+}
+
+.main-container {
+  align-self: center;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  grid-column: 1/-1;
+  height: 400px;
+}
+
+.main-text {
+  z-index: 2;
+  color: var(--second-color);
+  text-align: center;
+  text-shadow: var(--main-shadow);
+  padding: 20px;
+}
+.main-text h2 {
+  padding: 1.5rem 1rem 1rem;
+  border: 0.3rem solid #fff;
+  border-radius: 1rem;
+  font-size: var(--main-font-size);
+  letter-spacing: 3px;
+  /* animation: slide 1.5s forwards; */
+  animation-delay: 1s;
+  box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px rgb(255, 0, 149);
+}
+
+.main-text p {
+  /* animation: flicker 4s 2 alternate; */
+  font-size: var(--main-font-size);
+  letter-spacing: 2.5px;
+  font-variant: small-caps;
+  font-weight: bold;
+  animation-delay: 3s;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+      0 0 42px rgb(255, 0, 149), 0 0 82px rgb(255, 0, 149),
+      0 0 92px rgb(255, 0, 149), 0 0 102px rgb(255, 0, 149),
+      0 0 151px rgb(255, 0, 149);
+  }
+  20%,
+  30%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+/* Nav Start */
+
+.main-nav {
+  z-index: 1;
+  height: 80px;
+}
+
+.main-nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  padding-left: 0;
+  margin-top: 0;
+  padding: 10px 0;
+  background-color: var(--bck-color-main);
+}
+
+.main-nav ul li {
+  text-decoration: none;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.main-nav ul li a i {
+  color: var(--main-color);
+  font-size: 25px;
+}
+
+.material-icons-outlined.menu-icon {
+  display: none;
+  padding: 15px 0px 0px 10px;
+  font-size: 25px;
+  color: var(--main-color);
+  cursor: pointer;
+  z-index: 100;
+  background-color: var(--bck-color-main);
+}
+
+@media (max-width: 530px) {
+  .main-nav ul {
+    display: none;
+    opacity: 0;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 9%;
+    justify-content: center;
+    margin: 0;
+  }
+  .material-icons-outlined.menu-icon {
+    display: block;
+  }
+  .main-nav ul.active {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+/* Nav Finish */
+
+/* Header Finish */
+
+/* Short Bio Section */
+.short-bio-section {
+  width: calc(100vw - 10px);
+  height: 400px;
+}
+.short-bio-container {
+  color: var(--second-color);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.short-bio-container .grid-image {
+  grid-column: 1 /5;
+  grid-row: 1 /3;
+  width: 100%;
+}
+
+.short-bio-container .grid-text {
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+  color: var(--second-color);
+  text-shadow: var(--main-shadow);
+  font-size: var(--second-font-size);
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+
+.short-bio-container p span {
+  font-weight: bold;
+}
+
+.short-bio-container .me {
+  grid-column: 4/6;
+  grid-row: 2 /3;
+  border-radius: 50%;
+  border: 5px double var(--main-color);
+}
+
+@media (min-width: 1024px) {
+  .main-text h2 {
+    padding: 2rem 2.5rem 2.3rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .main-text h2,
+  .main-text p {
+    font-size: var(--third-font-size);
+  }
+  .main-nav ul li a i,
+  .main-nav ul li a span {
+    font-size: 11.5px;
+  }
+  h3 {
+    font-size: var(--third-font-size);
+  }
+  .short-bio-container .grid-text {
+    font-size: 11px;
+    grid-area: 1/1/2/5;
+    margin-left: 10px;
+  }
+  .short-bio-container .me {
+    grid-column: 3/6;
+    grid-row: 2 /4;
+    border-radius: 50%;
+    border: 5px double var(--main-color);
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Short Bio End */
+
+/* Skills Section Start */
+.skills {
+  height: 400px;
+}
+
+.skills h2 {
+  color: var(--second-color);
+  font-size: 45px;
+  text-shadow: var(--main-shadow);
+  text-align: center;
+  padding: 50px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skills-container i {
+  color: var(--main-color);
+  font-size: 40px;
+  text-shadow: var(--main-shadow);
+  text-align: center;
+  margin: 20px 30px;
+  position: relative;
+}
+
+.skills-container i span {
+  position: absolute;
+  left: 50%;
+  top: -45px;
+  transform: translate(-50%);
+  font-size: var(--third-font-size);
+  background-color: var(--bck-color-main);
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 7px;
+  transition: 2s;
+  opacity: 0;
+}
+
+/*    Tooltip    */
+
+.skills-container i span::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border-width: 10px;
+  border-style: solid;
+  bottom: -20px;
+  border-color: var(--bck-color-main) transparent transparent transparent;
+}
+
+.skills-container i:hover span {
+  opacity: 1;
+}
+
+@media (max-width: 530px) {
+  .skills-container i span {
+    font-size: 10px;
+    top: -40px;
+  }
+  .skills h2 {
+    margin: 0;
+  }
+}
+
+@media (min-width: 530px) {
+  .skills-container i {
+    font-size: 60px;
+    margin: 20px 60px;
+  }
+
+  .skills h2 {
+    margin-bottom: 50px;
+    padding: 0;
+  }
+}
+/* Skills section End */
+
+/* X Marks Change Theme Start */
+.xxx {
+  position: absolute;
+  color: var(--third-color);
+  top: 50%;
+  right: 0;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.xxx i {
+  position: relative;
+  font-size: xx-large;
+  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 25px white,
+    0 0 50px white, 0 0 100px var(--third-color), 0 0 150px var(--third-color),
+    0 0 200px var(--third-color), 0 0 220px var(--third-color),
+    0 0 250px var(--third-color);
+}
+.xxx i span {
+  position: absolute;
+  left: -55px;
+  transform: translate(-50%);
+  font-size: var(--third-font-size);
+  background-color: var(--bck-color-main);
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 7px;
+  transition: 1s;
+  opacity: 0;
+  transition: 1s;
+}
+
+.xxx i span::before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  border-width: 10px;
+  border-style: solid;
+
+  border-color: transparent transparent transparent var(--bck-color-main);
+}
+
+.xxx i:hover span {
+  opacity: 1;
+}
+
+/* X Marks End */
+/* Resume Section Start */
+.resume {
+  height: 600px;
+}
+
+.resume h2 {
+  color: var(--second-color);
+  font-size: 45px;
+  text-shadow: var(--main-shadow);
+  text-align: center;
+  padding: 0;
+  margin: 50px;
+}
+
+.resume .animation-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 445px;
+  overflow: hidden;
+}
+
+.resume .loader {
+  position: relative;
+  height: 445px;
+  width: 445px;
+  z-index: 3;
+}
+
+.resume .loader span {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  height: 180px;
+  width: 180px;
+  transform: rotate(calc(36deg * var(--i)));
+}
+
+.resume .loader span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 4px solid var(--main-color);
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0 0 18px var(--main-color), -18px -18px 0 var(--main-color),
+    -18px -18px 18px var(--main-color), 18px 18px 0 var(--main-color),
+    18px 18px 18px var(--main-color), 18px -18px 0 var(--main-color),
+    18px -18px 18px var(--main-color), -18px 18px 0 var(--main-color),
+    -18px 18px 18px var(--main-color);
+  animation: animate 5s linear infinite;
+  animation-delay: calc(-0.5s * var(--i));
+  transform-origin: 20px;
+  transition: 1s;
+}
+.resume .loader:hover span::before {
+  transform-origin: 300px;
+  box-shadow: 0 0 150px var(--main-color), -150px -150px 0 var(--main-color),
+    -150px -150px 150px var(--main-color), 150px 150px 0 var(--main-color),
+    150px 150px 150px var(--main-color), 150px -150px 0 var(--main-color),
+    150px -150px 150px var(--main-color), -150px 150px 0 var(--main-color),
+    -150px 150px 150px var(--main-color);
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.resume-button {
+  background-color: var(--main-color);
+  color: var(--second-color);
+  border: transparent;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 39%;
+  left: 34%;
+  box-shadow: var(--main-shadow);
+}
+
+/* Resume Section End */
