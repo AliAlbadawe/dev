@@ -10,6 +10,12 @@
     <!-- Normailze File -->
     <link rel="stylesheet" href="css/normalize.css" />
     <!-- Google Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Neonderthaw&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
@@ -64,12 +70,12 @@
     </nav>
     <!-- Navigation E -->
     <!-- Header S -->
-    <div class="main-container">
+    <section class="main-container">
       <div id="home" class="main-text">
         <h2>Front-End Developer</h2>
         <p>Ali Badawy</p>
       </div>
-    </div>
+    </section>
     <section class="short-bio-section">
       <div class="short-bio-container">
         <img
@@ -90,7 +96,7 @@
           <h3>AboutMe</h3>
           <p>
             Hello, i'm Ali. I am a freelance Front-End "nearly Full-Stack"
-            self-learn Developer based in Egypt. I specialise in creating
+            self-taught Developer based in Egypt. I specialise in creating
             interactive experiences and functional interfaces useing
             <span>React</span>, <span>ReactNative</span>,
             <span>Bootstrap</span> and <span>Canvas</span>
@@ -115,18 +121,23 @@
     </section>
     <!-- skills E -->
     <!-- X X X Marks Start-->
-    <section class="xxx">
+    <div class="xxx">
       <i class="fa-solid fa-x"><span>Click To Change Theme</span></i>
       <i class="fa-solid fa-x"><span>Click To Change Theme</span></i>
       <i class="fa-solid fa-x"><span>Click To Change Theme</span></i>
-    </section>
+    </div>
     <!-- X X X Marks End-->
     <!-- Resume Section Start -->
     <section class="resume">
       <h2 id="resume">Resume</h2>
       <div class="animation-section">
         <div class="loader">
-          <button class="resume-button">Download</button>
+          <a
+            class="resume-button"
+            href="/website/imgs/final-resume.pdf"
+            download=""
+            >Download</a
+          >
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>
           <span style="--i: 3"></span>
@@ -141,6 +152,20 @@
       </div>
     </section>
     <!-- Resume Section End -->
+    <!-- To Top Button Start -->
+    <i class="fa-solid fa-angles-up"></i>
+    <!-- To Top Button End -->
+    <!-- Projects Start -->
+    <section id="projects" class="projects-container">
+      <h2>Projects</h2>
+      <div class="card">
+        <span></span>
+      </div>
+    </section>
+    <!-- Projects End -->
+    <!-- Contact Start -->
+    <section id="contact" class="contact-container"></section>
+    <!-- Contact End -->
     <!-- Script Files -->
     <script src="js/scripts.js"></script>
   </body>
