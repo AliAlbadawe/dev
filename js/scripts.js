@@ -6,20 +6,20 @@ menuBtn.addEventListener("click", () => {
 });
 
 // To Top Button
-let toTopBtn = document.querySelector(".fa-solid.fa-angles-up");
-window.addEventListener("scroll", () => {
-  if (window.scrollY >= 350) {
-    toTopBtn.classList.add("active");
-  } else {
-    toTopBtn.classList.remove("active");
-  }
-});
-toTopBtn.addEventListener("click", () => {
-  scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-});
+// let toTopBtn = document.querySelector(".fa-solid.fa-angles-up");
+// window.addEventListener("scroll", () => {
+//   if (window.scrollY >= 350) {
+//     toTopBtn.classList.add("active");
+//   } else {
+//     toTopBtn.classList.remove("active");
+//   }
+// });
+// toTopBtn.addEventListener("click", () => {
+//   scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   });
+// });
 //Section ViewCheck To Highlight navBar item
 let home = document.querySelector(".main-container");
 let skills = document.querySelector(".skills");
