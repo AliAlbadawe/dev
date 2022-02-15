@@ -1,0 +1,26 @@
+:root {
+  --main-color: rgb(202, 11, 123);
+  --main-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px rgb(255, 0, 149), 0 0 82px rgb(255, 0, 149);
+  /* 0 0 92px rgb(255, 0, 149), 0 0 102px rgb(255, 0, 149),
+    0 0 151px rgb(255, 0, 149); */
+  --second-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 25px white,
+    0 0 50px white, 0 0 100px var(--third-color), 0 0 150px var(--third-color),
+    0 0 200px var(--third-color), 0 0 220px var(--third-color),
+    0 0 250px var(--third-color);
+  --second-color: rgb(248, 247, 247);
+  --third-color: rgb(253, 228, 0);
+  --bck-color: rgba(5, 5, 5, 0.123);
+  --bck-color-main: rgba(8, 7, 7, 0.25);
+  --main-font-size: 25px;
+  --second-font-size: 17.5px;
+  --third-font-size: 15px;
+  --neon-font-size: 37px;
+}
+
+.container {
+  /* background-image: url(../imgs/abandon.webp);
+    background-size: cover; */
+
+  background-color: rgb(12, 3, 3);
+}

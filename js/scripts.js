@@ -21,7 +21,7 @@ projects.setAttribute("data-callback", "activeProjects");
 contact.setAttribute("data-callback", "activeContact");
 gridImage.setAttribute("data-callback", "toTop");
 let observeOptions = {
-  rootMargin: "50px",
+  // rootMargin: "50px",
   threshold: 0.75,
 };
 const observer = new IntersectionObserver((entries) => {
@@ -75,3 +75,37 @@ toTopBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+//---------Theme Change-------
+
+let switches = document.getElementsByClassName("switch");
+
+for (let i of switches) {
+  i.addEventListener("click", function () {
+    let theme = this.dataset.theme;
+    setTheme(theme);
+    localStorage.setItem("style", theme);
+  });
+}
+
+function setTheme(theme) {
+  switch (theme) {
+    case "light":
+      document.getElementById("switcher-id").href = "./themes/light.css";
+      break;
+    case "blue":
+      document.getElementById("switcher-id").href = "./themes/blue.css";
+      break;
+    case "dark":
+      document.getElementById("switcher-id").href = "./themes/dark.css";
+      break;
+  }
+}
+
+let style = localStorage.getItem("style");
+
+if (style == null) {
+  setTheme("dark");
+} else {
+  setTheme(style);
+}
