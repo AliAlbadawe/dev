@@ -131,13 +131,13 @@ body::-webkit-scrollbar-thumb {
   border-radius: 1rem;
   font-size: var(--neon-font-size);
   letter-spacing: 3px;
-  animation: slide 1.5s forwards;
+  /* animation: slide 1.5s forwards; */
   animation-delay: 1s;
   box-shadow: var(--main-shadow);
 }
 
 .main-text p {
-  animation: flicker 4s 2 alternate;
+  /* animation: flicker 4s 2 alternate; */
   font-size: var(--neon-font-size);
   letter-spacing: 2.5px;
   font-variant: small-caps;
