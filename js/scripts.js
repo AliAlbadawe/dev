@@ -5,14 +5,15 @@ menuBtn.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
 
-//Section ViewCheck To Highlight navBar item
+//Section ViewCheck To make Effects
+
 let home = document.querySelector(".main-container");
 let skills = document.querySelector(".skills");
 let resume = document.querySelector(".resume");
 let contact = document.querySelector(".contact-container");
 let projects = document.querySelector(".projects-container");
 let gridImage = document.querySelector(".grid-image");
-let menu1 = Array.from(menu.children);
+let sections = [skills, resume, projects, contact, gridImage];
 
 home.setAttribute("data-callback", "activeHome");
 skills.setAttribute("data-callback", "activeSkills");
@@ -21,46 +22,37 @@ projects.setAttribute("data-callback", "activeProjects");
 contact.setAttribute("data-callback", "activeContact");
 gridImage.setAttribute("data-callback", "toTop");
 let observeOptions = {
-  // rootMargin: "50px",
-  threshold: 0.75,
+  // rootMargin: "-100px 0px 0px 0px",
+  threshold: 0.45,
 };
 const observer = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting === true) {
-    window[entries[0].target.dataset.callback]();
-  } else {
-    menu1.forEach((e) => {
-      e.classList.remove("active");
-    });
-  }
+  entries.forEach(function (entry) {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add("active");
+      window[entry.target.dataset.callback]();
+      observer.unobserve(entry.target);
+    }
+  });
 }, observeOptions);
 
-// observer.observe(resume);
-observer.observe(skills);
-observer.observe(resume);
-observer.observe(home);
-observer.observe(projects);
-observer.observe(contact);
+//Observing
+sections.forEach(function (section) {
+  observer.observe(section);
+});
+
 observer.observe(gridImage);
 
-function activeHome(e) {
-  menu1[0].classList.add("active");
-}
+function activeHome(e) {}
 
-function activeSkills(target) {
-  menu1[1].classList.add("active");
-}
+function activeSkills(target) {}
 
-function activeResume(target) {
-  menu1[2].classList.add("active");
-}
+function activeResume(target) {}
 
-function activeProjects(e) {
-  menu1[3].classList.add("active");
-}
+function activeProjects(e) {}
 
-function activeContact(e) {
-  menu1[4].classList.add("active");
-}
+function activeContact(e) {}
 
 toTop = (e) => {
   toTopBtn.classList.add("active");
@@ -105,7 +97,7 @@ function setTheme(theme) {
 let style = localStorage.getItem("style");
 
 if (style == null) {
-  setTheme("dark");
+  setTheme("blue");
 } else {
   setTheme(style);
 }

@@ -15,7 +15,7 @@
   --bck-color: rgba(5, 5, 5, 0.123);
   --bck-color-main: rgba(8, 7, 7, 0.25);
   --main-font-size: 25px;
-  --second-font-size: 17.5px;
+  --second-font-size: 20.5px;
   --third-font-size: 15px;
   --neon-font-size: 37px;
   --light: #ffffff;
@@ -350,6 +350,16 @@ body::-webkit-scrollbar-thumb {
 /* Skills Section Start */
 .skills {
   height: 400px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
+}
+
+.skills.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .skills h2 {
@@ -485,6 +495,16 @@ body::-webkit-scrollbar-thumb {
 /* Resume Section Start */
 .resume {
   height: 500px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
+}
+
+.resume.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .resume h2 {
@@ -608,6 +628,16 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transform: translateY(100px);
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
+}
+
+.projects-container.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects-container h2 {
