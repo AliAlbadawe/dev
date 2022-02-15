@@ -8,7 +8,7 @@
     0 0 50px white, 0 0 100px var(--third-color), 0 0 150px var(--third-color),
     0 0 200px var(--third-color), 0 0 220px var(--third-color),
     0 0 250px var(--third-color);
-  --second-color: rgb(248, 247, 247);
+  --second-color: rgb(250, 250, 250);
   --third-color: rgb(253, 228, 0);
   --bck-color: rgba(5, 5, 5, 0.123);
   --bck-color-main: rgba(8, 7, 7, 0.25);
@@ -23,4 +23,12 @@
     background-size: cover; */
 
   background-color: rgb(12, 3, 3);
+}
+
+.main-nav ul {
+  background: rgb(20, 19, 19);
+}
+
+.material-icons-outlined.menu-icon {
+  background: rgb(20, 19, 19);
 }

@@ -34,6 +34,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-family: "Fredericka the Great", cursive;
   font-family: "Sora", sans-serif;
+  font-family: "Gloria Hallelujah", cursive;
   background-color: var(--bck-color-main);
 }
 
@@ -122,7 +123,7 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   text-shadow: var(--main-shadow);
   padding: 20px;
-  font-family: "Fredericka the Great", cursive;
+  font-family: "Gloria Hallelujah", cursive;
   font-variant: small-caps;
 }
 .main-text h2 {
@@ -188,6 +189,23 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Nav Start */
+#logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 25000;
+  transform: translate(-50%);
+  height: 100px;
+  width: 100px;
+}
+
+@media (max-width: 530px) {
+  #logo {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+  }
+}
 
 .main-nav {
   z-index: 1;
@@ -199,13 +217,13 @@ body::-webkit-scrollbar-thumb {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 90vh;
+  justify-content: space-around;
+  height: 100vh;
   align-items: center;
   padding-left: 0;
   margin-top: 0;
   padding: 10px 0;
-  background-color: var(--bck-color-main);
+  background-color: var(--second-color);
 }
 
 .main-nav ul li {
@@ -233,18 +251,19 @@ body::-webkit-scrollbar-thumb {
 
 .material-icons-outlined.menu-icon {
   display: none;
-  padding: 15px 0px 0px 10px;
+  padding: 5px 0px 5px 10px;
   font-size: 25px;
   color: var(--main-color);
   cursor: pointer;
   z-index: 100;
-  background-color: var(--bck-color-main);
+  background-color: var(--second-color);
 }
 
 @media (max-width: 530px) {
   .main-nav ul {
     margin: auto;
     display: none;
+    height: auto;
     opacity: 0;
     flex-direction: row;
     list-style-type: none;
@@ -331,7 +350,7 @@ body::-webkit-scrollbar-thumb {
     font-size: var(--third-font-size);
   }
   .short-bio-container .grid-text {
-    font-size: 11px;
+    font-size: 15px;
     grid-area: 1/1/2/5;
     margin-left: 10px;
   }
@@ -723,7 +742,7 @@ body::-webkit-scrollbar-thumb {
 #fs-frm-inputs {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 65vw;
   justify-content: center;
   gap: 10px;
   color: var(--main-color);
