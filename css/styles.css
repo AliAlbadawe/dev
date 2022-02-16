@@ -101,12 +101,6 @@ body::-webkit-scrollbar-thumb {
 /* General Rules E */
 
 /* Header Start */
-.container {
-  /* background-image: url(../imgs/abandon.webp);
-  background-size: cover; */
-
-  background-color: rgb(12, 3, 3);
-}
 
 .main-container {
   width: inherit;
@@ -269,9 +263,8 @@ body::-webkit-scrollbar-thumb {
     list-style-type: none;
     align-items: center;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-around;
     width: 100vw;
-    gap: 25px;
     z-index: 10000;
     transform: 1s;
   }
@@ -344,7 +337,7 @@ body::-webkit-scrollbar-thumb {
   }
   .main-nav ul li a i,
   .main-nav ul li a span {
-    font-size: 11.5px;
+    font-size: 13.5px;
   }
   h3 {
     font-size: var(--third-font-size);
@@ -460,57 +453,6 @@ body::-webkit-scrollbar-thumb {
 }
 /* Skills section End */
 
-/* X Marks Change Theme Start */
-.xxx {
-  position: absolute;
-  color: var(--third-color);
-  top: 50%;
-  right: 0;
-  transform: translate(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.xxx i {
-  position: relative;
-  font-size: xx-large;
-  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 25px white,
-    0 0 50px white, 0 0 100px var(--third-color), 0 0 150px var(--third-color),
-    0 0 200px var(--third-color), 0 0 220px var(--third-color),
-    0 0 250px var(--third-color);
-}
-.xxx i span {
-  position: absolute;
-  left: -55px;
-  transform: translate(-50%);
-  font-size: var(--third-font-size);
-  background-color: var(--bck-color-main);
-  height: fit-content;
-  width: fit-content;
-  padding: 10px;
-  border-radius: 7px;
-  transition: 1s;
-  opacity: 0;
-  transition: 1s;
-}
-
-.xxx i span::before {
-  content: "";
-  position: absolute;
-  right: -30px;
-  top: 20%;
-  transform: translate(-50%, -50%);
-  border-width: 10px;
-  border-style: solid;
-  transition: 1s;
-  border-color: transparent transparent transparent var(--bck-color-main);
-}
-
-.xxx i:hover span {
-  opacity: 1;
-}
-
-/* X Marks End */
 /* Resume Section Start */
 .resume {
   height: 500px;
@@ -762,12 +704,15 @@ body::-webkit-scrollbar-thumb {
   margin-top: 10px;
 }
 /*Contact End */
+
+/* Theme Switch Start*/
 .theme-switches {
   position: absolute;
   display: flex;
   justify-content: center;
   right: 0;
-  top: 90px;
+  top: 0;
+  z-index: 25000;
 }
 
 .switch {
@@ -796,3 +741,4 @@ body::-webkit-scrollbar-thumb {
 #switch-3 {
   background-color: var(--dark);
 }
+/* Theme Switch End*/
