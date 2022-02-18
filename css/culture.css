@@ -16,10 +16,12 @@
 
 .video-container {
   grid-area: video-container;
+  font-family: "Sora", sans-serif;
 }
 
 .pictures-container {
   grid-area: pics;
+  font-family: "Sora", sans-serif;
 }
 
 .video-container {
@@ -58,7 +60,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
   overflow-x: hidden;
 }
 
@@ -69,6 +70,7 @@
 }
 
 .pictures-container div img {
+  border-radius: 5%;
   grid-column: 1/2;
   width: 85%;
   height: auto;
@@ -161,4 +163,5 @@
 
 .pictures-container div:nth-child(2) {
   background: var(--second-color);
+  border-radius: 5%;
 }

@@ -63,6 +63,7 @@ body {
 
 .short-bio-section {
   grid-area: short-bio-section;
+  font-family: "Sora", sans-serif;
 }
 
 .main-nav {
@@ -678,6 +679,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #fs-frm {
+  font-family: "Sora", sans-serif;
+
   height: 400px;
 }
 
