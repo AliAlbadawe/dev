@@ -67,6 +67,9 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  border-bottom: 2px solid var(--main-color);
+  border-radius: 5%;
+  border-top: 2px solid var(--main-color);
 }
 
 .pictures-container div img {
@@ -80,6 +83,7 @@
   transition-duration: 1200ms;
   transition-timing-function: linear;
   margin-left: 40px;
+  border: 2px solid var(--main-color);
 }
 
 .pictures-container div p {
